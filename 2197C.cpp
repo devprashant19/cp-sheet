@@ -6,7 +6,7 @@ bool f(long long p,long long q, vector<vector<bool>> &dp){
     if(p==0 && q==1) return false;
     if(dp[p][q]) return dp[p][q];
     if(q%3==0){
-        return dp[p][q] = (p==2*(q/3));
+        return dp[p][q] = (p==2*(q/3)); 
     }
     return dp[p][q] = f(p-1,q,dp) || f(p,q-1,dp) || f(p-1,q-1,dp);
 }
