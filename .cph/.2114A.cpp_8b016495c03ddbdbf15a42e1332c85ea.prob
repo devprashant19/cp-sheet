@@ -1,0 +1,1 @@
+{"name":"Local: 2114A","url":"e:\\DSA\\2114A.cpp","tests":[{"id":1770989963048,"input":"5\n0001\n1001\n1000\n4900\n2025\n","output":"0 1\n-1\n-1\n0 70\n0 45\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\2114A.cpp","group":"local","local":true}
