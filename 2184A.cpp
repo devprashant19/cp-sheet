@@ -12,7 +12,8 @@ int main() {
             else cout<<1<<endl;
         }
         if(n==1)cout<<0<<endl;
-        if(n==2 || n==3)cout<<2<<endl;
+        if(n==2)cout<<2<<endl;
+        if(n==3)cout<<3<<endl;
     }
     return 0;
 }
