@@ -1,0 +1,1 @@
+{"name":"Local: 2178A","url":"e:\\DSA\\2178A.cpp","tests":[{"id":1772023896011,"input":"7\nYY\nNN\nNNY\nYYYNY\nNNNNN\nYYYYYY\nYNNNNN\n","output":"NO\nYES\nYES\nNO\nYES\nNO\nYES\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\2178A.cpp","group":"local","local":true}
