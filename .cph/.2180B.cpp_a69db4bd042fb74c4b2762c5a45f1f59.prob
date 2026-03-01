@@ -1,0 +1,1 @@
+{"name":"Local: 2180B","url":"e:\\DSA\\2180B.cpp","tests":[{"id":1772375915500,"input":"3\n4\namir rima amin nima\n1\ncodeforces\n3\na ab abc\n","output":"aminamirrimanima\ncodeforces\naababc\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\2180B.cpp","group":"local","local":true}
