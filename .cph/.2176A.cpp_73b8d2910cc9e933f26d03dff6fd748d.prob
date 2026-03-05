@@ -1,0 +1,1 @@
+{"name":"Local: 2176A","url":"e:\\DSA\\2176A.cpp","tests":[{"id":1772734453650,"input":"5\n3\n3 2 1\n3\n1 2 3\n3\n3 3 3\n5\n3 1 4 5 2\n1\n1\n","output":"2\n0\n0\n2\n0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\2176A.cpp","group":"local","local":true}
