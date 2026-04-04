@@ -5,11 +5,14 @@ int main(){
     cin >> t;
     while (t--){
         int n;
-        cin>>n;
-        vector<int> arr;
-        for (int i = 2; i < 3*n+1; i++)arr.push_back(i);
-        arr.push_back(1);
-        for (int i = 0; i < 3*n; i++)cout<<arr[i]<<" ";
-        cout<<"\n";
+        cin >> n;
+        int small = 1;
+        int large = 3 * n;
+        for (int i = 0; i < n; i++) {
+            cout << small << " " << large - 1 << " " << large << " ";
+            small++;
+            large -= 2; 
+        }
+        cout << "\n";
     }
 }
