@@ -1,0 +1,1 @@
+{"name":"Local: cp4","url":"e:\\DSA\\cp4.cpp","tests":[{"id":1775376871360,"input":"4 7 8\n","output":"3\n"},{"id":1775376880265,"input":"9 25 37\n","output":"4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\cp4.cpp","group":"local","local":true}
