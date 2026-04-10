@@ -26,24 +26,18 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    unordered_map<int,int>mpp;
-    int n,k;
+    ll n,k;
     cin>>n>>k;
-    vector<int>v(n);
-    for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
-        mpp[x]++;
-        v[i]=x;
-    }
-    for(int i=0;i<n;i++){
+    vector<ll>v(n);
+    map<ll,bool>mpp;
+    for(ll i=0;i<n;i++)cin>>v[i],mpp[v[i]]=true;
+    for(ll i=0;i<n;i++){
         if(mpp.find(v[i]-k)!=mpp.end()){
             cout<<"YES\n";
             return;
         }
     }
     cout<<"NO\n";
-    return;
 }
 
 int main() {
