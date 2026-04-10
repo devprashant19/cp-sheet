@@ -26,26 +26,52 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-	int n;
-	cin>>n;
-	vector<int> a(n);
-	for(int i=0;i<n;i++)cin>>a[i];
-	int k=(1<<30)-1;
-	for(int i=0;i<n;i++){
-		if(a[i]!=i){
-			k=k&a[i];
-		}
-	}
-	cout<<k<<"\n";
-	return;
+    int n;
+    cin >> n;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++)cin >> v[i];
+    ll gcd1 = 0, gcd2 = 0;
+    for (int i = 0; i < n; i++) {
+        if (i & 1) {
+            gcd2 = __gcd(gcd2, v[i]);
+        } else {
+            gcd1 = __gcd(gcd1, v[i]);
+        }
+    }
+
+    bool flag = true;
+    for (int i = 1; i < n; i += 2) {
+        if (v[i] % gcd1 == 0) { 
+            flag = false;
+            break;
+        }
+    }
+    if (flag) {
+        cout << gcd1 << endl;
+        return;
+    }
+
+    flag = true;
+    for (int i = 0; i < n; i += 2) {
+        if (v[i] % gcd2 == 0) {
+            flag = false;
+            break;
+        }
+    }
+    if (flag) {
+        cout << gcd2 << endl;
+    } else {
+        cout << 0 << endl;
+    }
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	int tc = 1;
-	cin >> tc;
-	for (int t = 1; t <= tc; t++) {
-		solve();
-	}
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    int tc = 1;
+    cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve();
+    }
 }
