@@ -23,29 +23,24 @@ const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
 
+
+
 void solve() {
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) {
-        cin >> v[i];
+    ll n;
+    cin>>n;
+    vector<ll> a(n);
+    for(ll i=0;i<n;i++) cin>>a[i];
+    vector<ll>pref_sum(n+1);
+    ll ans=LONG_LONG_MIN,tsum=0;
+    pref_sum[0]=0;
+    for(ll i=0;i<n;i++) {
+        pref_sum[i+1]=pref_sum[i]+a[i];
+        tsum+=a[i];
     }
-    int ans = 0,i=n-1;
-    while (i >= 0 && v[i] == v[n - 1]) {
-        i--;
+    for(ll i=0;i<n-1;i++){
+        ans=max(ans,__gcd(tsum-pref_sum[i+1],pref_sum[i+1]));
     }
-    if (i == -1) {
-        cout << 0 << endl;
-        continue;
-    }
-    while (i >= 0) {
-        i -= (n - 1 - i);
-        ans++;
-        while (i >= 0 && v[i] == v[n - 1]) {
-            i--;
-        }
-    }
-    cout << ans << endl;
+    cout<<ans<<"\n";
 }
 
 int main() {

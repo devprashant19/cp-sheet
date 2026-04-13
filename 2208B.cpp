@@ -24,7 +24,7 @@ int main() {
         if (n > k) {
             vector<long long> others;
             for (int i = 0; i < n; i++) {
-                if (i != p - 1) {
+                if (i != p - 1) {178
                     others.push_back(a[i]);
                 }
             }
