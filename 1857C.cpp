@@ -26,26 +26,28 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-	int n;
-	cin>>n;
-	vector<int> a(n);
-	for(int i=0;i<n;i++)cin>>a[i];
-	int k=(1<<30)-1;
-	for(int i=0;i<n;i++){
-		if(a[i]!=i){
-			k=k&a[i];
-		}
-	}
-	cout<<k<<"\n";
-	return;
+    int n;
+    cin>>n;
+    int m=(n*(n-1))/2;
+    vector<int> a(m);
+    for(int i=0;i<m;i++)cin>>a[i];
+    sort(a.begin(),a.end());
+    int x=n-1,i=0;
+    while(x>0){
+        cout<<a[i]<<" ";
+        i+=x;
+        x--;
+    }
+    cout<<"1000000000\n";
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	int tc = 1;
-	cin >> tc;
-	for (int t = 1; t <= tc; t++) {
-		solve();
-	}
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    int tc = 1;
+    cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve();
+    }
 }
