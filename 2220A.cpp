@@ -37,8 +37,7 @@ void solve() {
             return;
         }
     }
-    a.push_back(a[0]);
-    a.erase(a.begin());
+    sort(a.rbegin(),a.rend());
     for(int i=0;i<n;i++)cout<<a[i]<<" ";
     cout<<"\n";
 }
