@@ -22,21 +22,22 @@ const ll INF = 1e9;
 const ld EPS = 1e-9;
 void solve() {
     int n;
-    cin >> n;
-    long long arr[n];
-    for (int i = 0; i < n; i++)cin >> arr[i];
-    long long ans = 0;
-    for (int i = 1; i <= 60; i++) {
-        set<long long> distinctVals;
-        long long k = 1LL << i;
-        for (int ind = 0; ind < n; ind++)distinctVals.insert(arr[ind] % k);
-        if (distinctVals.size() == 2) {
-            ans = k;
+    cin>>n;
+    vector<ll>a(n);
+    for(int i=0;i<n;i++)cin>>a[i];
+    ll ans=0;
+    for(int i=1;i<=60;i++){
+        set<ll>s;
+        ll k = 1LL << i;
+        for(int j=0;j<n;j++){
+            s.insert(a[j]%k);
+        }
+        if(s.size()==2){
+            ans=k;
             break;
         }
     }
-    
-    cout << ans << endl;
+    cout<<ans<<endl;
 }
 
 int main() {
