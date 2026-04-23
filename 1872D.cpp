@@ -28,7 +28,7 @@ const ld EPS = 1e-9;
 void solve() {
     ll n,x,y;
     cin>>n>>x>>y;
-    ll lcm_xy = (x / __gcd(x, y)) * y;
+    ll lcm_xy = (x /__gcd(x, y)) * y;
     ll n1 = (n / x) - (n / lcm_xy);
     ll n2 = (n / y) - (n / lcm_xy);
     ll sum_add = n1 * (2 * n - n1 + 1) / 2;
