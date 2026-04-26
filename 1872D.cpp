@@ -11,7 +11,6 @@ template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T) { cerr
 #else
 #define dbg(...)
 #endif
-
 #define ar array
 #define ll long long
 #define ld long double
