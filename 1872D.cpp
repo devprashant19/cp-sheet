@@ -32,7 +32,7 @@ void solve() {
     ll n2 = (n / y) - (n / lcm_xy);
     ll sum_add = n1 * (2 * n - n1 + 1) / 2;
     ll sum_sub = n2 * (n2 + 1) / 2;
-    cout << sum_add - sum_sub << "\n";
+    cout << sum_add -sum_sub << "\n";
 }
 
 int main() {
