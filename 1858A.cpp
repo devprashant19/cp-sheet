@@ -10,15 +10,15 @@ int main()
         cin>>a>>b>>c;
         if(c%2==1){
             if(b>a){
-                cout<<"Second"<<endl;
+                cout<<"Second\n";
             }else{
-                cout<<"First"<<endl;
+                cout<<"First\n";
             }
         }else{
             if(a>b){
-                cout<<"First"<<endl;
+                cout<<"First\n";
             }else{
-                cout<<"Second"<<endl;
+                cout<<"Second\n";
             }
         }
     }
