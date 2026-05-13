@@ -26,7 +26,25 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    
+    long long n,m;
+    cin>>n>>m;
+    vector<vector<long long>>a(m,vector<long long>(n));
+    for(long long i=0;i<n;i++){
+        for(long long j=0;j<m;j++){
+            cin>>a[j][i];
+        }
+    }
+    for(long long i=0;i<m;i++){
+        sort(a[i].begin(),a[i].end());
+    }
+    long long ans=0;
+    for(long long i=0;i<m;i++){
+        for(long long j=0;j<n;j++){
+            ans-=(a[i][j]*(n-j-1));
+            ans+=(a[i][j]*j);
+        }
+    }
+    cout<<ans<<"\n";
 }
 
 int main() {
