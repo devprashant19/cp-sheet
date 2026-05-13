@@ -26,34 +26,7 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    int n;
-    cin>>n;
-    vector<int> a(n);
-    for(int i=0;i<n;i++)cin>>a[i];
-    if(a.size()==1){
-        cout<<"1\n";
-        return;
-    }
-    vector<int>ans;
-    ans.push_back(a[0]);
-    ans.push_back(a[1]);
-    for(int i=2;i<n;i++){
-        int node=ans.size();
-        int x=ans[node-2]-ans[node-1];
-        int y=ans[node-1]-a[i];
-        if(x>0){
-            if(y>0){
-                ans[node-1]=a[i];
-            }else if(y<0) ans.push_back(a[i]);
-        }else{
-            if(y<0){
-                ans[node-1]=a[i];
-            }else if(y>0) ans.push_back(a[i]);
-        }
-    }
-    int n1=ans.size();
-    if(ans[0]==ans[1])n1--;
-    cout<<n1<<"\n";
+    
 }
 
 int main() {
