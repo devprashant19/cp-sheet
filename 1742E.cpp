@@ -43,7 +43,7 @@ void solve() {
     vector<ll>a(n);
     vector<ll>pref(n);
     vector<ll>pmax(n);
-    vector<ll>k(n);
+    vector<ll>k(q);
     cin>>a[0];
     pref[0]=a[0];
     pmax[0]=a[0];
