@@ -22,24 +22,28 @@ const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
+
+
+
 void solve() {
     ll n;
     cin>>n;
-    string s;
-    cin>>s;
-    ll ans=0;
-    vector<bool> flag(n+1,false);
-    for(int i=1;i<=n;i++){
-        for(int j=i;j<=n;j+=i){
-            if(s[j-1]=='1')break;
-            if(flag[j])continue;
-            else{
-                flag[j]=true;
-                ans+=i;
-            }
-        }
+    vector<ll>x(n);
+    vector<ll>y(n),a(n);
+    for(int i=0;i<n;i++)cin>>x[i];
+    for(int i=0;i<n;i++)cin>>y[i];
+    for(int i=0;i<n;i++)a[i]=y[i]-x[i];
+    sort(a.begin(),a.end());
+    ll cnt=0;
+    ll l=0,r=n-1;
+    while(l<r){
+        if(a[l]+a[r]>=0){
+            cnt++;
+            l++;
+            r--;
+        }else l++;
     }
-    cout<<ans<<"\n";
+    cout<<cnt<<"\n";
 }
 
 int main() {
