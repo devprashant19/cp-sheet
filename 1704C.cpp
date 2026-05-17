@@ -24,40 +24,32 @@ const ll INF = 1e9;
 const ld EPS = 1e-9;
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
-
-    vector<int> v(m);
-    for (int i = 0; i < m; i++) {
-        cin >> v[i];
+    ll n,m;
+    cin>>n>>m;
+    vector<ll>a(m);
+    for(int i=0;i<m;i++)cin>>a[i];
+    sort(a.begin(),a.end());
+    vector<ll>b;
+    ll l=-1;
+    for(int i=1;i<m;i++){
+        ll gap=a[i]-a[i-1]-1;
+        if(gap>0)b.push_back(gap);
     }
-
-    sort(all(v));
-
-    vector<int> gaps;
-    for (int i = 0; i < m - 1; i++) {
-        gaps.push_back(v[i + 1] - v[i] - 1);
-    }
-
-    gaps.push_back(v[0] + n - v[m - 1] - 1);
-
-    sort(gaps.rbegin(), gaps.rend());
-
-    int numSaved = 0, numDays = 0;
-
-    for (auto gap : gaps) {
-        int currGap = gap - numDays * 2;
-        if (currGap > 0) {
-            numSaved++;
-            currGap -= 2;
-            if (currGap > 0) {
-                numSaved += currGap;
-            }
-            numDays += 2;
+    ll gap_end=(n-a[m-1])+(a[0]-1);
+    if(gap_end>0)b.push_back(gap_end);
+    sort(b.rbegin(),b.rend());
+    ll ans=0,days=0;
+    for(int i=0;i<b.size();i++){
+        ll cgap=b[i]-days*2;
+        if(cgap>0){
+            ans++;
+            cgap-=2;
+            if(cgap>0)ans+=cgap;
+            days+=2;
         }
     }
-
-    cout << (n - numSaved) << "\n";
+    cout<<n-ans<<"\n";
+    return;
 }
 
 int main() {
