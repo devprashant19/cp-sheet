@@ -26,7 +26,26 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    
+    int n;
+    cin>>n;
+    vector<vector<int>>a(n,vector<int>(n));
+    for(int i=0;i<n;i++){
+        string s;
+        cin>>s;
+        for(int j=0;j<n;j++)a[i][j]=s[j]-'0';
+    }
+    int ans=0;
+    for(int i=0;i<n/2;i++){
+        for(int j=0;j<(n+1)/2;j++){
+            int c1=a[i][j];
+            int c2=a[j][n-1-i];
+            int c3=a[n-1-i][n-1-j];
+            int c4=a[n-1-j][i];
+            int c=c1+c2+c3+c4;
+            ans+=min(c,4-c);
+        }
+    }
+    cout<<ans<<"\n";
 }
 
 int main() {
