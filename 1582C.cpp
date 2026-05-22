@@ -24,21 +24,37 @@ const ll INF = 1e9;
 const ld EPS = 1e-9;
 
 void solve() {
-    ll n; 
-    cin >> n;
-    vector<ll>a(n);
-    for(int i=0;i<n;i++)cin>>a[i];
-    if(a[n-2]>a[n-1]){
-        cout<<"-1\n";
-        return;
-    }else if(a[n-1]>=0){
-        cout<<n-2<<"\n";
-        for(int i=1;i<=n-2;i++)cout<<i<<" "<<n-1<<" "<<n<<"\n";
-    }else{
-        if(is_sorted(a.begin(),a.end()))cout<<"0\n";
-        else cout<<"-1\n";
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int ans=INT_MAX;
+    for(char c='a';c<='z';c++){
+        bool flag=true;
+        int temp=0;
+        int l=0,r=n-1;
+        while(l<r){
+            if(s[l]==s[r]){
+                l++;
+                r--;
+                continue;
+            }
+            if(s[l]==c){
+                l++;
+                temp++;
+            }else if(s[r]==c){
+                r--;
+                temp++;
+            }else{
+                flag=false;
+                break;
+            }
+        }
+        if(flag)ans=min(ans,temp);
+        else temp=INT_MAX;
     }
-    return;
+    if(ans==INT_MAX)cout<<-1<<endl;
+    else cout<<ans<<"\n";
 }
 
 int main() {
