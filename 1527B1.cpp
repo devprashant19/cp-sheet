@@ -32,7 +32,7 @@ void solve() {
 		for(int i=0;i<n;i++) {
 			if(s[i]=='0')count0++;
 		}
-		if ((count0 % 2 == 0) or (count0 == 1))cout << "BOB\n";
+		if((count0%2==0)||(count0==1))cout<<"BOB\n";
 		else cout<<"ALICE\n";
 }
 
