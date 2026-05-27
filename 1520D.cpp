@@ -26,15 +26,15 @@
 
 
     void solve() {
-        int n;
+        ll n;
         cin>>n;
-        vector<int> a(n);
+        vector<ll> a(n);
         for(int i=0;i<n;i++) cin>>a[i];
-        vector<int> b(n);
+        vector<ll> b(n);
         for(int i=0;i<n;i++)b[i]=-(i+1)+a[i];
-        unordered_map<int,int> mpp;
+        unordered_map<ll,ll> mpp;
         for(int i=0;i<n;i++)mpp[b[i]]++;
-        int ans=0;
+        ll ans=0;
         for(const auto &it:mpp){
             if(it.second>1){
                 ans+=(it.second)*(it.second-1)/2;
