@@ -26,13 +26,12 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    ll n,k;
-    cin>>n>>k;
-    ll ans=1;
-    for(int i=0;i<k;i++){
-        ans=(ans*n)%MOD;
+    ll n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cout<<2*i-1<<" ";
     }
-    cout<<ans<<"\n";
+    cout<<"\n";
 }
 
 int main() {
