@@ -28,10 +28,25 @@ const ld EPS = 1e-9;
 void solve() {
     ll n;
     cin>>n;
-    for(int i=1;i<=n;i++){
-        cout<<2*i-1<<" ";
+    vector<ll>a(n);
+    for(ll i=0;i<n;i++){
+        cin>>a[i];
     }
-    cout<<"\n";
+    ll min1=0;
+    for(ll i=1;i<n;i++){
+        min1=max(min1,a[i-1]-a[i]);
+    }
+    for(ll i=1;i<n;i++){
+        if(a[i-1]>a[i]){
+            a[i]+=min1;
+        }
+    }
+    if(is_sorted(a.begin(),a.end())){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
 }
 
 int main() {
