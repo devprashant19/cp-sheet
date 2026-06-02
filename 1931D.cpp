@@ -26,40 +26,35 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    int n;
-    cin >> n;
-    vector<int> gang(n + 1);
-    for (int i = 1; i <= n; i++)cin >> gang[i];
-    vector<array<int, 2>> edges;
-    int val1 = 1, val2 = -1;
-    for (int i = 2; i <= n; i++)
-    {
-        if (gang[i] != gang[1])
-        {
-            edges.push_back({1, i});
-            val2 = i;
-            break;
+    int n, x, y;
+    cin >> n >> x >> y;
+    vector<int> a(n, 0);
+    map<int, vector<int>> mp;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        mp[a[i] % y].push_back(a[i]);
+    }
+    long long int ans = 0;
+    for (auto it : mp) {
+        vector<int> v = it.second;
+        map<int, long long int> mp1;
+        for (int i = 0; i < v.size(); i++) {
+            mp1[v[i] % x]++;
+        }
+        for (auto it : mp1) {
+            if (it.first == 0 || (it.first == x / 2 && x % 2 == 0)) {
+                long long int cnt = it.second;
+                ans += (cnt * (cnt - 1)) / 2;
+                it.second = 0;
+            } else {
+                long long int cnt1 = it.second;
+                long long int cnt2 = mp1[x - it.first];
+                ans += cnt1 * cnt2;
+                mp1[x - it.first] = 0;
+            }
         }
     }
-    if (val2 == -1)
-    {
-        cout << "NO\n";
-        return;
-    }
-    for (int i = 2; i <= n; i++)
-    {
-        if (i == val2)continue; 
-        if (gang[i] != gang[val1])
-        {
-            edges.push_back({val1, i});
-        }
-        else
-        {
-            edges.push_back({val2, i});
-        }
-    }
-    cout << "YES\n";
-    for (auto &edge : edges)cout << edge[0] << " " << edge[1] << "\n";
+    cout << ans << "\n";
 }
 
 int main() {
