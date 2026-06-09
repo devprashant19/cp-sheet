@@ -22,34 +22,32 @@ const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
-
+const ll VAL = 998244353;
 
 
 void solve() {
-    ll n;
-    cin >> n;
-    vector<ll> a(n);
-    for(int i=0;i<n;i++)cin>>a[i];
-    unordered_map<ll,ll> mpp;
-    for(int i=0;i<n;i++){
-        ll val=a[i];
-        for(ll d=2;d*d<=val;d++){
-            while(val%d==0){
-                val/=d;
-                mpp[d]++;
-            }
-        }
-        if(val>1)mpp[val]++;
-    }
-    bool flag=false;
-    for(auto x:mpp){
-        if(x.second%n!=0){
-            flag=true;
-            break;
+    string s;
+    cin>>s;
+    ll n=s.size();
+    ll ans=1;
+    ll len=1;
+    ll cur=1;
+    ll minVal=0;
+    for(int i=1;i<n;i++){
+        if(s[i-1]==s[i]){
+            minVal++;
+            cur++;
+        }else{
+            len++;
+            ans=(ans*cur)%VAL;
+            cur=1;
         }
     }
-    if(flag)cout<<"NO\n";
-    else cout<<"YES\n";
+    ans=(ans*cur)%VAL;
+    for(int i=1;i<=minVal;i++){
+        ans=(ans*i)%VAL;
+    }
+    cout<<minVal<<" "<<ans<<"\n";
 }
 
 int main() {
