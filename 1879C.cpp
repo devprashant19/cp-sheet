@@ -30,7 +30,6 @@ void solve() {
     cin>>s;
     ll n=s.size();
     ll ans=1;
-    ll len=1;
     ll cur=1;
     ll minVal=0;
     for(int i=1;i<n;i++){
@@ -38,7 +37,6 @@ void solve() {
             minVal++;
             cur++;
         }else{
-            len++;
             ans=(ans*cur)%VAL;
             cur=1;
         }
