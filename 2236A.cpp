@@ -26,31 +26,13 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    ll n, k;
-    cin >> n >> k;
-    string A, B;
-    cin >> A >> B;
-    ll onesA = 0, onesB = 0, onesC = 0;
-    for (int i = 0; i < n; i++) {
-        if (A[i] == '1') onesA++;
-        if (B[i] == '1') onesB++;
-        if (A[i] != B[i]) onesC++;
-    }
-    ll valA = onesA * (n - onesA);
-    ll valB = onesB * (n - onesB);
-    ll valC = onesC * (n - onesC);
-    ll N = (1LL << k) + 1; 
-    ll countA, countB, countC;
-    if (k % 2 == 1) {
-        countA = N / 3;
-        countB = N / 3;
-        countC = N / 3;
-    } else {
-        countA = (N + 1) / 3;
-        countB = (N + 1) / 3;
-        countC = (N - 2) / 3;
-    }
-    ll ans = countA * valA + countB * valB + countC * valC;
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    for (int i=0;i<n;i++)cin >> h[i];
+    int min_h = *min_element(h.begin(), h.end());
+    int max_h = *max_element(h.begin(), h.end());
+    int ans = max_h-min_h+1;
     cout << ans << "\n";
 }
 
