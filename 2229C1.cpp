@@ -37,7 +37,6 @@ void solve() {
         if (flips % 2 != 0) {
             current_val = -current_val;
         }
-        
         if (current_val > 0) {
             ops.push_back(i + 1);
             flips++;
