@@ -1,0 +1,1 @@
+{"name":"Local: 2240C","url":"e:\\DSA\\2240C.cpp","tests":[{"id":1782574830711,"input":"5\n1\n1\n2\n1 2\n5\n1 4 5 2 6\n1\n1073741823\n3\n1 2 3\n","output":"0\n1\n3\n0\n1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\2240C.cpp","group":"local","local":true}
