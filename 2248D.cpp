@@ -39,7 +39,8 @@ void solve() {
         cin>>l>>r;
         int m1=pref[r]-pref[l-1];
         int m2=pref2[r]-pref2[l-1];
-        if(m1==m2) cout<<"YES\n";
+        int len=r-l+1;
+        if(m1*2<=len && m2*2<=len)cout<<"YES\n";
         else cout<<"NO\n";
     }
 }
