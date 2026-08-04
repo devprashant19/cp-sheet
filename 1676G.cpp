@@ -22,37 +22,29 @@ const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
-int ans=0;
-int dfs(int node,vector<vector<int>>& adj,string& s) {
-    if(adj[node].size()==0){
-        if(s[node-1]=='W')return 1;
-        return -1;
-    }
-    int c=0;
-    if(s[node-1]=='W')c++;
-    else c--;
-    for(int child:adj[node]){
-        c+=dfs(child,adj,s);
-    }
-    if(c==0)ans++;
-    return c;
-}
 
 void solve() {
-    int n;
-    cin >> n;
-    ans=0;
-    vector<vector<int>>adj(n+1,vector<int>());
-    for(int i=0;i<n-1;i++){
-        int temp;
-        cin>>temp;
-        adj[temp].push_back(i+2);
+    int n, k;
+    cin >> n >> k; 
+    vector<int> a(n); 
+    vector<int> bits(32); 
+    int ans = (1 << 31) - 1; 
+    for (int i = 0; i < n; i++) { 
+        cin >> a[i];
+        ans &= a[i]; 
+        for (int j = 0; j < 32; j++) { 
+            if (a[i] & (1 << j)) {
+                bits[j]++; 
+            }
+        }
     }
-	string s;
-    cin>>s;
-    dfs(1,adj,s);
-    cout<<ans<<"\n";
-    return;
+    for (int i = 30; i >= 0; i--) { 
+        if (k >= n - bits[i]) {
+            ans |= (1 << i); 
+            k -= (n - bits[i]); 
+        }
+    }
+    cout << ans << "\n"; 
 }
 
 int main() {
