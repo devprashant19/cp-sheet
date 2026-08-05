@@ -29,22 +29,23 @@ void solve() {
     int n;
     cin>>n;
     vector<pair<int,int>>ans;
-    while(n--){
+    for(int j=0;j<n;j++){
         int k;
         cin>>k;
         vector<int>a(k);
         for(int i=0;i<k;i++)cin>>a[i];
         int val=a[0]+1;
-        for(int i=1;i<k;i++){
+        for(int i=0;i<k;i++){
             val=max(val,a[i]-i+1);
         }
         ans.push_back({val,k});
     }
     sort(ans.begin(),ans.end());
     int minReq=ans[0].first;
-    int inc=ans[0].second;
+    ll inc=ans[0].second;
     for(int i=1;i<n;i++){
-        minReq=max(minReq,ans[i].first-inc);
+        ll curr=ans[i].first-inc;
+        if(curr>minReq)minReq=curr;
         inc+=ans[i].second;
     }
     cout<<minReq<<"\n";
