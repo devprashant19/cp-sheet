@@ -35,8 +35,7 @@ void solve() {
         int val=log2(a[i]);
         temp[val]++;
     }
-    int height=0;
-    int boxes=0;
+    int height=0,boxes=0;
     while(boxes<n){
         int len=w;
         for(int i=20;i>=0;i--){
