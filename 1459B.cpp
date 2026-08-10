@@ -28,7 +28,7 @@ int main() {
     cin.tie(0); cout.tie(0);
     int n;
 	cin>>n;
-	int k=n/2;
+	int k=n/2; 
 	long long int ans=0;
 	if(n%2==0)ans=(k+1)*(k+1);
 	else ans=2*(k+1)*(k+2);
