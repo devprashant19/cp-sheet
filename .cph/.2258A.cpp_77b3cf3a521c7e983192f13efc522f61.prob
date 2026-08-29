@@ -1,0 +1,1 @@
+{"name":"Local: 2258A","url":"e:\\DSA\\2258A.cpp","tests":[{"id":1788015774594,"input":"4\n7\n2 4 6 7 8 9 10\n2\n55 55555\n4\n1000000 1000 1 1000000000\n5\n23 32 23 32 23\n","output":"2\n5\n1000000\n23\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\2258A.cpp","group":"local","local":true}
